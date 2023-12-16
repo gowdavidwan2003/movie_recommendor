@@ -1,6 +1,6 @@
 # CiniMagic: A Movie Recommendation System
 
-###🌐 I'm thrilled to announce that the project is now live and hosted at https://movierecommendor-1.streamlit.app/. Feel free to check it out!
+### 🌐 I'm thrilled to announce that the project is now live and hosted at https://movierecommendor-1.streamlit.app/. Feel free to check it out!
 
 ## Overview
 CiniMagic is a movie recommendation system built with Python, pandas, and Streamlit. It uses a dataset of movie genres and ratings to learn about user behavior and recommend movies that the user might like.
