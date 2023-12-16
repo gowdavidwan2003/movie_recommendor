@@ -40,10 +40,13 @@ if page == 'Home':
         inputMovies = inputMovies
         userMovies = moviesWithGenres_df[moviesWithGenres_df['movieId'].isin(inputMovies['movieId'].tolist())]
         userMovies = userMovies.reset_index(drop=True)
-        userGenreTable = userMovies.drop('movieId', 1).drop('title', 1).drop('imdb_score',1)
+        columns_to_drop = ['movieId', 'title', 'imdb_score']
+        userGenreTable = userMovies.drop(columns=[col for col in columns_to_drop if col in userMovies.columns])
+        #userGenreTable = userMovies.drop('movieId', 1).drop('title', 1).drop('imdb_score',1)
         userProfile = userGenreTable.transpose().dot(inputMovies['rating'])
         genreTable = moviesWithGenres_df.set_index(moviesWithGenres_df['movieId'])
-        genreTable = genreTable.drop('movieId', 1).drop('title', 1).drop('imdb_score',1)
+        #genreTable = genreTable.drop('movieId', 1).drop('title', 1).drop('imdb_score',1)
+        genreTable = genreTable.drop(columns=[col for col in columns_to_drop if col in genreTable.columns])
         recommendationTable_df = ((genreTable*userProfile).sum(axis=1))/(userProfile.sum())
         moviesWithGenres_df['match_score'] = recommendationTable_df
         final_recommend = moviesWithGenres_df.sort_values(by=['match_score', 'imdb_score'], ascending=[False, False])
