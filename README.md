@@ -15,4 +15,4 @@ CiniMagic is a movie recommendation system built with Python, pandas, and Stream
 3. Click 'Submit'. The system will then recommend 20 movies that you might enjoy.
 
 ## Dataset
-The system uses a dataset from Kaggle, which can be found in kaggle['https://www.kaggle.com/datasets/carolzhangdc/imdb-5000-movie-dataset?rvi=1'].
+The system uses a dataset from Kaggle, which can be found in kaggle[https://www.kaggle.com/datasets/carolzhangdc/imdb-5000-movie-dataset?rvi=1].
